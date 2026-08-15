@@ -1,16 +1,28 @@
 /**
- * 红果短剧 - 穿山甲空广告包（轻量备用）
- * 仅处理 get_ads / stats / settings，不做业务 JSON 递归
- * 若主脚本 HongGuo_Ads.js 导致页面异常，可在 conf 中改挂本文件
+ * 红果短剧 - 穿山甲空广告包
+ * 供 Quantumult X script-response-body 使用
+ * 多结构兼容：不同 SDK 版本读取 ads / creatives / data 字段不一
  */
 
 const EMPTY = {
   request_id: "",
   ret: 0,
+  code: 0,
   message: "success",
+  msg: "success",
+  reason: 0,
   ads: [],
   creatives: [],
-  data: { ads: [], creatives: [] },
+  adslots: [],
+  data: {
+    ads: [],
+    creatives: [],
+    adslots: [],
+  },
 };
 
-$done({ body: JSON.stringify(EMPTY) });
+$done({
+  status: "HTTP/1.1 200 OK",
+  headers: { "Content-Type": "application/json; charset=utf-8" },
+  body: JSON.stringify(EMPTY),
+});

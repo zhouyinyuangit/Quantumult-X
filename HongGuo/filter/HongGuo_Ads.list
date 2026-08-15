@@ -1,19 +1,38 @@
-# 红果短剧-去广告（分流 Filter · 安全版）
-# 仅 reject 明确广告/追踪域名；不含 fqnovel 业务与播放 CDN
+# 红果短剧-去广告（分流 Filter）
+# 必须启用：很多广告在 DNS/连接层直接 reject 比改包更有效
+# 策略请指向 reject；不要加入 *.fqnovel.com / *.fqnovelvod.com
 
-# ---- 穿山甲 / 广告 CDN ----
+# ---- 穿山甲 SDK / 广告素材 ----
 host-suffix, pangolin-sdk-toutiao.com, reject
 host-suffix, pangolin-sdk-toutiao-b.com, reject
 host-suffix, pglstatp-toutiao.com, reject
+host, sf3-ttcdn-tos.pstatp.com, reject
 host, p6-ad-sign.byteimg.com, reject
 host, p9-ad-sign.byteimg.com, reject
 
-# ---- 广告追踪（不影响播放）----
+# ---- 字节广告接口主机（番茄/红果常用）----
+host, is.snssdk.com, reject
+host, i.snssdk.com, reject
+host, i-lq.snssdk.com, reject
+host, pangolin.snssdk.com, reject
+host, bds.snssdk.com, reject
+host, extlog.snssdk.com, reject
+host, mcs.snssdk.com, reject
+
+# ---- 广告追踪 ----
 host, dig.bdurl.net, reject
 host, dig.zjurl.cn, reject
 host, log5-applog.fqnovel.com, reject
 host, rtlog5-applog.fqnovel.com, reject
 
-# ---- 电商引流（可选；若异常可整段注释）----
-host-suffix, ecombdimg.com, reject
+# ---- 西瓜/活动引流（广告页常见）----
+host, v6-novelapp.ixigua.com, reject
+host-suffix, default.ixigua.com, reject
 host, activity-ag.awemeughun.com, reject
+host, api.iegadp.qq.com, reject
+
+# ---- 电商/直播带货素材（滑滑流广告常见）----
+host-suffix, ecombdapi.com, reject
+host-suffix, ecombdimg.com, reject
+host-suffix, byteorge.com, reject
+host-suffix, bytegoofy.com, reject
