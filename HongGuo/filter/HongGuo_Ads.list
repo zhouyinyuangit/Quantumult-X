@@ -1,0 +1,27 @@
+# 红果短剧-去广告（分流 Filter）
+# 用途：在 [filter_remote] / [filter_local] 中引用，策略建议指向 reject
+# 说明：仅拦截明确广告/追踪域名，不屏蔽 fqnovel 播放与业务主域
+
+# ---- 穿山甲 / 广告 CDN ----
+host-suffix, pangolin-sdk-toutiao.com, reject
+host-suffix, pangolin-sdk-toutiao-b.com, reject
+host-suffix, pglstatp-toutiao.com, reject
+host, sf3-ttcdn-tos.pstatp.com, reject
+host, p6-ad-sign.byteimg.com, reject
+host, p9-ad-sign.byteimg.com, reject
+
+# ---- 广告追踪 / 点击上报 ----
+host, dig.bdurl.net, reject
+host, dig.zjurl.cn, reject
+host, log5-applog.fqnovel.com, reject
+host, rtlog5-applog.fqnovel.com, reject
+host, mcs.snssdk.com, reject
+
+# ---- 电商 / 引流（可选）----
+host-suffix, ecombdapi.com, reject
+host-suffix, ecombdimg.com, reject
+host, activity-ag.awemeughun.com, reject
+host, api.iegadp.qq.com, reject
+
+# ---- 明确广告素材 host ----
+host-keyword, ad-sign.byteimg, reject

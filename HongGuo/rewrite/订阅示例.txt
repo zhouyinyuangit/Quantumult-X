@@ -1,0 +1,30 @@
+# 远程订阅 / 本地引用示例
+# 仓库：https://github.com/zhouyinyuangit/Quantumult-X
+# 目录：HongGuo/
+
+# --------------------------------------------
+# [rewrite_remote]  远程重写（推荐，可直接复制）
+# --------------------------------------------
+# [rewrite_remote]
+https://raw.githubusercontent.com/zhouyinyuangit/Quantumult-X/main/HongGuo/rewrite/HongGuo_Ads.conf, tag=红果短剧-去广告, update-interval=86400, opt-parser=true, enabled=true
+
+# --------------------------------------------
+# [filter_remote]  可选分流
+# --------------------------------------------
+# [filter_remote]
+https://raw.githubusercontent.com/zhouyinyuangit/Quantumult-X/main/HongGuo/filter/HongGuo_Ads.list, tag=红果短剧-广告域名, force-policy=reject, update-interval=86400, enabled=true
+
+# --------------------------------------------
+# GUI「重写 → 引用」填写
+# --------------------------------------------
+# 资源路径：
+#   https://raw.githubusercontent.com/zhouyinyuangit/Quantumult-X/main/HongGuo/rewrite/HongGuo_Ads.conf
+# 标签：红果短剧-去广告
+# 自动更新：86400
+# 解析器：开（opt-parser）
+# 启用：开
+
+# --------------------------------------------
+# 脚本直链（conf 内已引用）
+# --------------------------------------------
+# https://raw.githubusercontent.com/zhouyinyuangit/Quantumult-X/main/HongGuo/scripts/HongGuo_Ads.js
