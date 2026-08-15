@@ -36,3 +36,11 @@ host-suffix, ecombdapi.com, reject
 host-suffix, ecombdimg.com, reject
 host-suffix, byteorge.com, reject
 host-suffix, bytegoofy.com, reject
+
+# ---- 补充广告相关（仍避开 fqnovel 业务/播放域）----
+host, abtest-ch.snssdk.com, reject
+host, vas-lf-x.snssdk.com, reject
+host-suffix, byteoversea.com, reject
+host-keyword, ad-sign.byteimg, reject
+host-keyword, pangolin-sdk-toutiao, reject
+
