@@ -46,13 +46,13 @@ enabled=true
 
 | 场景 | 手段 |
 |------|------|
-| 穿山甲 get_ads | `script-response-body` 返回空广告包 |
-| 广告素材 / mp4 / ad-pattern | `reject` |
-| `/api/ad/` | `reject-dict` |
-| fqnovel 业务 JSON | 递归删除广告字段 + 激励解锁提示字段 |
-| 广告域名 | 分流 `reject`（可选） |
+| 穿山甲 get_ads / ad API | `reject-dict`（不改业务包） |
+| 广告素材 / ad-pattern | `reject` |
+| 业务域 `*.fqnovel.com` | **不 MitM、不改包**（避免刷视频网络错误） |
 
-**刻意不拦截**：`*.fqnovelvod.com` 等播放 CDN，避免卡顿断流。
+**刻意不拦截**：`*.fqnovel.com`、`*.fqnovelvod.com` 等业务与播放域名。
+
+> 若仍出现「网络错误，请点击重试」，请更新本订阅，并确认 MitM 主机名中未手动添加 `*.fqnovel.com`。
 
 ## 限制说明
 
